@@ -1,0 +1,345 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header layout */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: slideDown 1s ease-out;
+}
+
+/* Logo and brand */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 10px;
+  transition: transform 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.animated-logo {
+  animation: fadeInLogo 1.2s ease-out;
+}
+
+.brand-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #0078D7;
+}
+
+/* Navbar styling */
+.navbar a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #0078D7;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Main content */
+.main-content {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  color: #333;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Form styling */
+.form-box {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box input,
+.form-box select {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+/* Buttons */
+.cta-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #FFD700;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c200;
+}
+
+.update-button,
+.delete-button,
+.edit-button,
+.remove-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.update-button {
+  background-color: #0078D7;
+  color: white;
+}
+
+.update-button:hover {
+  background-color: #005fa3;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.remove-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.remove-button:hover {
+  background-color: #5a6268;
+}
+
+/* Habit list */
+.habit-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.habit-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.habit-item input[type="text"],
+.habit-item select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+/* Admin table */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Messages */
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+  color: #f0f0f0;
+}
+
+.dark-mode .header {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+}
+
+.dark-mode .navbar a {
+  color: #FFD700;
+}
+
+.dark-mode .navbar a::after {
+  background-color: #FFD700;
+}
+
+.dark-mode .brand-name {
+  color: #FFD700;
+}
+
+.dark-mode .form-box input,
+.dark-mode .form-box select,
+.dark-mode .habit-item input,
+.dark-mode .habit-item select {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode .cta-button,
+.dark-mode .update-button,
+.dark-mode .delete-button,
+.dark-mode .edit-button,
+.dark-mode .remove-button {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeInContent 1.5s ease-out;
+}
+
+@keyframes fadeInContent {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  .main-content {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .habit-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
